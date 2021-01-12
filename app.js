@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan')
 const env = require('dotenv');
 
+const exchangeRoute = require('./routes/exchangeRoute');
+
 // Read the config file
 env.config({ path: './config.env' });
 
@@ -27,6 +29,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+
+// Route middleware
+app.use('/api', exchangeRoute);
 
 // App listen to server
 const port = 8989 || process.env.PORT;
