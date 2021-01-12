@@ -22,6 +22,8 @@ exports.getRates = async (req, res, next) => {
                 rates,
             }
         });
+        
+
     } catch (error) {
         console.log(error);
 
