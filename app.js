@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const morgan = require('morgan')
 const env = require('dotenv');
 
@@ -7,17 +6,6 @@ const exchangeRoute = require('./routes/exchangeRoute');
 
 // Read the config file
 env.config({ path: './config.env' });
-
-// Replace DB dummy text with actual password
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
-
-// Connect with database with mongoose
-mongoose.connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-}).then(() => console.log('Database connected'));
 
 // Start express app
 const app = express();

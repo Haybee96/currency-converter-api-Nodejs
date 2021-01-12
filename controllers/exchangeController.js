@@ -27,7 +27,7 @@ exports.getRates = async (req, res, next) => {
 
         res.status(400).json({
             status: 'fail',
-            message: 'something went wrong',
+            message: 'Failed to fetch data. Please try again',
         });
     }
 };
