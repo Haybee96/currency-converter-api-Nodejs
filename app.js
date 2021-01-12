@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Route middleware
-app.use('/api', exchangeRoute);
+app.use('/api/v1', exchangeRoute);
 
 // App listen to server
 const port = 8989 || process.env.PORT;
